@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171513">
+  <meta name="description" content="Hotel Mayolo en Huancayo: habitaciones cómodas, Wi-Fi, TV, agua caliente, cochera amplia y atención personalizada. Reserva por WhatsApp.">
+  <title>Hotel Mayolo | Hospedaje cómodo y seguro en Huancayo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado-sitio">
+    <nav class="barra-navegacion" aria-label="Navegación principal">
+      <a class="marca" href="#inicio" aria-label="Hotel Mayolo inicio">
+        <img src="assets/imagenes/logo-mayolo.png" alt="Logo Hotel Mayolo" width="612" height="408">
+      </a>
+      <button class="boton-menu" type="button" aria-label="Abrir menú" aria-controls="menu-navegacion" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-navegacion" id="menu-navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+        <a class="boton boton--pequeno" href="#contacto">Reservar ahora</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="portada" id="inicio" aria-label="Presentación Hotel Mayolo">
+      <img src="assets/imagenes/fachada-principal.jpg" alt="Fachada principal del Hotel Mayolo" class="fondo-portada" width="1280" height="960" fetchpriority="high">
+      <div class="velo-portada"></div>
+      <div class="contenido-portada revelar">
+        <p class="antetitulo">Hospedaje moderno</p>
+        <h1>Hotel Mayolo</h1>
+        <p>Comodidad, limpieza y atención personalizada para una estadía tranquila, segura y cerca de todo.</p>
+        <div class="acciones-portada">
+          <a class="boton" href="#contacto">Reservar ahora</a>
+          <a class="boton boton--contorno" href="#habitaciones">Ver habitaciones</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion sobre-hotel" id="sobre-hotel">
+      <div class="cuadricula-seccion">
+        <div class="texto-seccion revelar">
+          <p class="antetitulo">Sobre el hotel</p>
+          <h2>Una estadía pensada para descansar bien</h2>
+          <p>En Hotel Mayolo, cada detalle está pensado para ofrecer una experiencia cómoda, segura y agradable. Nuestras instalaciones combinan funcionalidad, limpieza y atención personalizada para que cada huésped disfrute una estadía tranquila.</p>
+          <p>Contamos con más de 40 habitaciones, conexión Wi-Fi, TV, agua caliente y estacionamiento amplio para huéspedes.</p>
+        </div>
+        <div class="panel-destacado revelar">
+          <img src="assets/imagenes/recepcion.jpg" alt="Recepción del Hotel Mayolo" width="1280" height="960" loading="lazy">
+          <div class="estadisticas">
+            <article>
+              <strong class="valor-estadistica" data-contador data-objetivo="40" data-prefijo="+ " aria-label="Más de 40">+ 40</strong>
+              <span>habitaciones</span>
+            </article>
+            <article>
+              <strong class="estadistica-destacada">24/7</strong>
+              <span>atención</span>
+            </article>
+            <article>
+              <strong class="valor-estadistica" data-contador data-objetivo="100" data-sufijo="%" aria-label="100 por ciento">100%</strong>
+              <span>comodidad</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion habitaciones" id="habitaciones">
+      <div class="encabezado-seccion revelar">
+        <p class="antetitulo">Habitaciones</p>
+        <h2>Espacios cómodos para cada viaje</h2>
+      </div>
+      <div class="lista-habitaciones revelar" aria-label="Tipos de habitaciones">
+        <div class="cuadricula-habitaciones">
+          <article class="tarjeta-habitacion">
+            <img src="assets/imagenes/habitacion-doble.jpg" alt="Habitación doble con dos camas" width="1280" height="960" loading="lazy">
+            <div>
+              <h3>Doble</h3>
+              <p>Habitación con 2 camas, ideal para familias, compañeros de viaje o estadías compartidas.</p>
+              <ul>
+                <li>TV y Wi-Fi</li>
+                <li>Baño privado</li>
+                <li>Agua caliente</li>
+              </ul>
+              <a class="boton boton--pequeno" href="#contacto" data-habitacion="Doble">Consultar disponibilidad</a>
+            </div>
+          </article>
+          <article class="tarjeta-habitacion">
+            <img src="assets/imagenes/habitacion-individual.jpg" alt="Habitación simple con una cama" width="1280" height="960" loading="lazy">
+            <div>
+              <h3>Simple</h3>
+              <p>Habitación con 1 cama, perfecta para viajes de trabajo, descanso personal o pareja.</p>
+              <ul>
+                <li>Ambiente privado</li>
+                <li>TV y Wi-Fi</li>
+                <li>Limpieza diaria</li>
+              </ul>
+              <a class="boton boton--pequeno" href="#contacto" data-habitacion="Simple">Consultar disponibilidad</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion servicios" id="servicios">
+      <div class="encabezado-seccion revelar">
+        <p class="antetitulo">Servicios y amenidades</p>
+        <h2>Lo esencial, bien resuelto</h2>
+      </div>
+      <div class="cuadricula-amenidades">
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-wifi.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Wi-Fi</h3>
+          <p>Conectividad para trabajar, estudiar o seguir tu ruta.</p>
+        </article>
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-tv.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Televisión</h3>
+          <p>Entretenimiento en habitaciones cómodas y privadas.</p>
+        </article>
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-ducha.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Agua caliente</h3>
+          <p>Comodidad constante para descansar después del día.</p>
+        </article>
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-parking.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Estacionamiento</h3>
+          <p>Cochera amplia para mayor tranquilidad durante tu estadía.</p>
+        </article>
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-recepcion.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Recepción</h3>
+          <p>Atención personalizada y orientación para huéspedes.</p>
+        </article>
+        <article class="amenidad revelar">
+          <span class="icono-amenidad"><img src="assets/imagenes/amenidades/icono-seguridad.svg" alt="" width="64" height="64" aria-hidden="true"></span>
+          <h3>Seguridad</h3>
+          <p>Instalaciones ordenadas, limpias y pensadas para descansar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion galeria" id="galeria">
+      <div class="encabezado-seccion revelar">
+        <p class="antetitulo">Galería</p>
+        <h2>Conoce nuestros ambientes</h2>
+      </div>
+      <div class="cuadricula-galeria revelar">
+        <button class="elemento-galeria elemento-galeria--grande" type="button" data-medio="imagen" data-ruta="assets/imagenes/hotel-exterior-1.jpg" aria-label="Ampliar vista exterior del hotel">
+          <img src="assets/imagenes/hotel-exterior-1.jpg" alt="Vista exterior del Hotel Mayolo" width="1280" height="960" loading="lazy">
+        </button>
+        <button class="elemento-galeria" type="button" data-medio="imagen" data-ruta="assets/imagenes/patio-interno.jpg" aria-label="Ampliar patio interno">
+          <img src="assets/imagenes/patio-interno.jpg" alt="Patio interno del hotel" width="1280" height="960" loading="lazy">
+        </button>
+        <button class="elemento-galeria" type="button" data-medio="imagen" data-ruta="assets/imagenes/estacionamiento-amplio.jpg" aria-label="Ampliar estacionamiento">
+          <img src="assets/imagenes/estacionamiento-amplio.jpg" alt="Estacionamiento amplio del Hotel Mayolo" width="1280" height="960" loading="lazy">
+        </button>
+        <button class="elemento-galeria" type="button" data-medio="imagen" data-ruta="assets/imagenes/bano.jpg" aria-label="Ampliar baño privado">
+          <img src="assets/imagenes/bano.jpg" alt="Baño privado de habitación" width="1280" height="960" loading="lazy">
+        </button>
+        <button class="elemento-galeria miniatura-video" type="button" data-medio="video" data-ruta="assets/videos/video-1.mp4" aria-label="Reproducir video del hotel">
+          <video src="assets/videos/video-1.mp4" muted preload="metadata"></video>
+          <span>Ver video</span>
+        </button>
+        <button class="elemento-galeria miniatura-video" type="button" data-medio="video" data-ruta="assets/videos/video-2.mp4" aria-label="Reproducir video de ambientes">
+          <video src="assets/videos/video-2.mp4" muted preload="metadata"></video>
+          <span>Ver video</span>
+        </button>
+        <button class="elemento-galeria miniatura-video" type="button" data-medio="video" data-ruta="assets/videos/video-3.mp4" aria-label="Reproducir video de instalaciones">
+          <video src="assets/videos/video-3.mp4" muted preload="metadata"></video>
+          <span>Ver video</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="seccion ubicacion" id="ubicacion">
+      <div class="cuadricula-seccion">
+        <div class="texto-seccion revelar">
+          <p class="antetitulo">Ubicación</p>
+          <h2>Encuéntranos fácilmente</h2>
+          <p>Estamos en Huancayo, en una ubicación práctica para quienes buscan descanso, cochera y atención cercana.</p>
+          <a class="boton" href="https://maps.app.goo.gl/rZoXA4fT8Ei9HcbG9" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+        <div class="marco-mapa revelar">
+          <iframe title="Mapa de Hotel Mayolo en Huancayo" src="https://www.google.com/maps/embed?pb=!4v1780199299069!6m8!1m7!1sbiABho2iCqIDiUmfZ8ezzA!2m2!1d-12.0750604098579!2d-75.24847874399366!3f162.04321045909998!4f8.824637507744512!5f0.7820865974627469" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion resenas" id="resenas">
+      <div class="encabezado-seccion revelar">
+        <p class="antetitulo">Comentarios</p>
+        <h2>Lo que destacan nuestros huéspedes</h2>
+      </div>
+      <div class="cuadricula-resenas">
+        <article class="tarjeta-resena revelar">
+          <div>
+            <strong>Christopher Llanos Loayza</strong>
+            <span aria-label="5 de 5 estrellas">★★★★★</span>
+          </div>
+          <p class="fuente-resena">Reseña de Google</p>
+          <p>“El mejor hospedaje de la zona, si trabajas en chupaca te queda relativamente cerca y no encontraras hospedaje tan bueno como este. El trato amable los cuartos limpios y sobretodo el agua caliente a toda hora.”</p>
+        </article>
+        <article class="tarjeta-resena revelar">
+          <div>
+            <strong>Julio Carlos Santivañez Castillo</strong>
+            <span aria-label="5 de 5 estrellas">★★★★★</span>
+          </div>
+          <p class="fuente-resena">Reseña de Google</p>
+          <p>“Un lugar sin igual y cómodas habitaciones y la limpieza ni que decir lo recomiendo en todo sus aspectos”</p>
+        </article>
+        <article class="tarjeta-resena revelar">
+          <div>
+            <strong>Joel Bellido Escriba</strong>
+            <span aria-label="4 de 5 estrellas">★★★★</span>
+          </div>
+          <p class="fuente-resena">Reseña de Google</p>
+          <p>“No le pude tomar foto alos cuartos pero muy limpios amplios la habitación 50 soles agua caliente ,tv con cochera camada cómoda abrigadora seguridad dentro del hotel por al alrededores hay donde comer agente bcp aceptan yape.”</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion contacto" id="contacto">
+      <div class="cuadricula-seccion">
+        <div class="texto-seccion revelar">
+          <p class="antetitulo">Contacto y reservas</p>
+          <h2>Consulta disponibilidad</h2>
+          <p>Escríbenos directamente desde el ícono de WhatsApp o completa el formulario con tus fechas y el tipo de habitación que necesitas. Te responderemos para confirmar la disponibilidad y ayudarte con tu reserva.</p>
+        </div>
+        <form class="formulario-reserva revelar" id="formulario-reserva" novalidate>
+          <div class="campo-formulario">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo-formulario">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" spellcheck="false" required>
+          </div>
+          <div class="campo-formulario">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required>
+          </div>
+          <div class="campos-divididos">
+            <div class="campo-formulario">
+              <label for="llegada">Llegada</label>
+              <input id="llegada" name="llegada" type="date" required>
+            </div>
+            <div class="campo-formulario">
+              <label for="salida">Salida</label>
+              <input id="salida" name="salida" type="date" required>
+            </div>
+          </div>
+          <div class="campo-formulario">
+            <label for="habitacion">Tipo de habitación</label>
+            <select id="habitacion" name="habitacion" required>
+              <option value="">Selecciona una opción</option>
+              <option>Doble</option>
+              <option>Simple</option>
+            </select>
+          </div>
+          <div class="campo-formulario">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cuántas personas viajan o cualquier detalle importante…"></textarea>
+          </div>
+          <p class="estado-formulario" role="status" aria-live="polite"></p>
+          <button class="boton" type="submit">Enviar consulta</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div>
+      <img src="assets/imagenes/logo-mayolo.png" alt="Logo Hotel Mayolo" width="612" height="408">
+      <p>Comodidad, limpieza y atención personalizada en Huancayo.</p>
+    </div>
+    <nav aria-label="Enlaces rápidos">
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div>
+      <p class="telefono-hotel" translate="no">944 216 425</p>
+      <p>© 2026 Hotel Mayolo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <dialog class="visor-galeria" id="visor-galeria" aria-label="Vista ampliada de la galería">
+    <button class="cerrar-visor" type="button" aria-label="Cerrar galería" data-cerrar-visor>×</button>
+    <div class="contenido-visor"></div>
+  </dialog>
+
+  <a class="whatsapp-flotante" href="https://wa.me/51944216425?text=Hola%20Hotel%20Mayolo%2C%20quisiera%20consultar%20disponibilidad." target="_blank" rel="noopener" aria-label="Escribir a Hotel Mayolo por WhatsApp">
+    <img src="assets/imagenes/amenidades/icono-whatsapp.svg" alt="" width="32" height="32" aria-hidden="true">
+  </a>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
