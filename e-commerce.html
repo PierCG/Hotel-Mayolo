@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda del Hotel Mayolo: productos útiles para tu estadía, entrega en recepción o directamente en tu habitación.">
+  <title>Tienda Mayolo | Productos para tu estadía</title>
+  <link rel="icon" href="assets/imagenes/logo-mayolo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="e-commerce.css">
+</head>
+<body>
+  <header class="encabezado-tienda">
+    <nav class="navegacion-tienda" aria-label="Navegación principal">
+      <a class="marca-tienda" href="index.html" aria-label="Hotel Mayolo, volver a la página principal">
+        <img src="assets/imagenes/logo-mayolo.png" alt="" width="612" height="408">
+      </a>
+
+      <div class="menu-tienda" id="menu-tienda">
+        <a href="index.html">Hotel</a>
+        <a href="#catalogo">Productos</a>
+        <a href="#como-comprar">Cómo comprar</a>
+      </div>
+
+      <div class="acciones-cabecera">
+        <button class="boton-menu-tienda" id="boton-menu-tienda" type="button" aria-label="Abrir menú" aria-controls="menu-tienda" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <button class="boton-carrito-cabecera" id="abrir-carrito" type="button" aria-label="Abrir carrito de compras" aria-controls="carrito" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 4h2l2.2 9.1a2 2 0 0 0 2 1.5h7.7a2 2 0 0 0 1.9-1.4L20.5 7H7M10 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
+          <span class="contador-carrito" id="contador-carrito" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="hero-tienda" aria-labelledby="titulo-tienda">
+      <img class="hero-tienda__imagen" src="assets/imagenes/recepcion.jpg" alt="Recepción del Hotel Mayolo, punto de recojo de los productos" width="1280" height="960">
+      <div class="hero-tienda__velo" aria-hidden="true"></div>
+      <div class="contenedor hero-tienda__contenido">
+        <p class="antetitulo-tienda">La despensa del huésped</p>
+        <h1 id="titulo-tienda">Todo lo que tu estadía puede necesitar.</h1>
+        <p>Una selección breve y honesta de esenciales, detalles locales y antojos. Pide en línea y recibe en tu habitación o recoge en recepción.</p>
+        <a class="boton-tienda" href="#catalogo">Explorar productos</a>
+      </div>
+      <p class="sello-entrega">
+        <span aria-hidden="true">24/7</span>
+        Entrega en el hotel
+      </p>
+    </section>
+
+    <section class="franja-beneficios" aria-label="Beneficios de la tienda">
+      <div class="contenedor">
+        <p><strong>Sin costo de entrega</strong><span>Dentro del Hotel Mayolo</span></p>
+        <p><strong>Compra sencilla</strong><span>Confirma tu pedido por WhatsApp</span></p>
+        <p><strong>Atención cercana</strong><span>Te ayudamos desde recepción</span></p>
+      </div>
+    </section>
+
+    <section class="seccion-catalogo" id="catalogo" aria-labelledby="titulo-catalogo">
+      <div class="contenedor">
+        <div class="cabecera-catalogo">
+          <div>
+            <p class="antetitulo-tienda">Catálogo</p>
+            <h2 id="titulo-catalogo">Pequeños imprescindibles</h2>
+          </div>
+          <p>Precios en soles e impuestos incluidos. La disponibilidad puede variar durante el día.</p>
+        </div>
+
+        <div class="controles-catalogo" role="group" aria-label="Filtros del catálogo">
+          <div class="campo-busqueda">
+            <label for="buscar-producto">Buscar un producto</label>
+            <input class="control-formulario" id="buscar-producto" type="search" placeholder="Ejemplo: café o aseo" autocomplete="off">
+          </div>
+          <div class="grupo-filtros" role="group" aria-label="Filtrar por categoría">
+            <button class="filtro activo" type="button" data-categoria="todos" aria-pressed="true">Todos</button>
+            <button class="filtro" type="button" data-categoria="bebidas" aria-pressed="false">Bebidas</button>
+            <button class="filtro" type="button" data-categoria="bienestar" aria-pressed="false">Bienestar</button>
+            <button class="filtro" type="button" data-categoria="local" aria-pressed="false">Detalles locales</button>
+          </div>
+        </div>
+
+        <p class="resultado-busqueda" id="resultado-busqueda" role="status" aria-live="polite"></p>
+        <div class="rejilla-productos" id="lista-productos"></div>
+      </div>
+    </section>
+
+    <section class="como-comprar" id="como-comprar" aria-labelledby="titulo-como-comprar">
+      <div class="contenedor">
+        <div class="cabecera-pasos">
+          <p class="antetitulo-tienda">Simple de principio a fin</p>
+          <h2 id="titulo-como-comprar">Tu pedido en tres pasos</h2>
+        </div>
+        <ol class="lista-pasos">
+          <li><span aria-hidden="true">01</span><strong>Elige</strong><p>Agrega al carrito los productos que quieras.</p></li>
+          <li><span aria-hidden="true">02</span><strong>Indica dónde</strong><p>Selecciona habitación o recojo en recepción.</p></li>
+          <li><span aria-hidden="true">03</span><strong>Confirma</strong><p>Revisa el resumen y envía el pedido por WhatsApp.</p></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <div class="fondo-carrito" id="fondo-carrito" aria-hidden="true"></div>
+  <aside class="carrito" id="carrito" aria-labelledby="titulo-carrito" aria-hidden="true">
+    <div class="carrito__cabecera">
+      <div>
+        <p class="antetitulo-tienda">Tu selección</p>
+        <h2 id="titulo-carrito" tabindex="-1">Carrito de compra</h2>
+      </div>
+      <button class="boton-icono" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="carrito__contenido">
+      <p class="carrito-vacio" id="carrito-vacio">Tu carrito está vacío. Explora el catálogo y agrega algo para tu estadía.</p>
+      <ul class="lista-carrito" id="lista-carrito" aria-label="Productos en el carrito"></ul>
+    </div>
+    <div class="carrito__resumen">
+      <p><span>Subtotal</span><strong id="subtotal-carrito">S/ 0.00</strong></p>
+      <p><span>Entrega en el hotel</span><strong>Gratis</strong></p>
+      <p class="total-carrito"><span>Total</span><strong id="total-carrito">S/ 0.00</strong></p>
+      <button class="boton-tienda boton-tienda--ancho" id="ir-checkout" type="button" disabled>Continuar con el pedido</button>
+    </div>
+  </aside>
+
+  <dialog class="modal-pedido" id="modal-pedido" aria-labelledby="titulo-pedido">
+    <form class="formulario-pedido" id="formulario-pedido" novalidate>
+      <div class="modal-pedido__cabecera">
+        <div>
+          <p class="antetitulo-tienda">Último paso</p>
+          <h2 id="titulo-pedido">Confirma tu pedido</h2>
+        </div>
+        <button class="boton-icono" id="cerrar-pedido" type="button" aria-label="Cerrar formulario de pedido">×</button>
+      </div>
+
+      <div class="resumen-checkout" id="resumen-checkout" role="region" aria-label="Resumen del pedido"></div>
+      <div class="errores-formulario" id="errores-formulario" role="alert" tabindex="-1" hidden></div>
+
+      <div class="campos-pedido">
+        <div>
+          <label class="etiqueta-formulario" for="nombre-pedido">Nombre completo</label>
+          <input class="control-formulario" id="nombre-pedido" name="nombre" type="text" autocomplete="name" required>
+          <span class="mensaje-campo" id="error-nombre"></span>
+        </div>
+        <div>
+          <label class="etiqueta-formulario" for="telefono-pedido">Teléfono</label>
+          <input class="control-formulario" id="telefono-pedido" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required>
+          <span class="mensaje-campo" id="error-telefono"></span>
+        </div>
+      </div>
+
+      <fieldset class="opciones-entrega">
+        <legend>¿Cómo deseas recibirlo?</legend>
+        <label><input type="radio" name="entrega" value="Habitación" checked> Entrega en mi habitación</label>
+        <label><input type="radio" name="entrega" value="Recepción"> Recojo en recepción</label>
+      </fieldset>
+
+      <div id="campo-habitacion">
+        <label class="etiqueta-formulario" for="habitacion-pedido">Número de habitación</label>
+        <input class="control-formulario" id="habitacion-pedido" name="habitacion" type="text" inputmode="numeric" autocomplete="off" required>
+        <span class="mensaje-campo" id="error-habitacion"></span>
+      </div>
+
+      <div>
+        <label class="etiqueta-formulario" for="nota-pedido">Indicaciones adicionales <span>(opcional)</span></label>
+        <textarea class="control-formulario" id="nota-pedido" name="nota" rows="3" placeholder="Por ejemplo: entregar a las 8:00 p. m."></textarea>
+      </div>
+
+      <label class="aceptacion-pedido">
+        <input id="aceptar-pedido" type="checkbox" required>
+        Confirmo que revisaré el detalle antes de enviarlo por WhatsApp.
+      </label>
+      <span class="mensaje-campo" id="error-aceptacion"></span>
+
+      <button class="boton-tienda boton-tienda--ancho" type="submit">Revisar y confirmar pedido</button>
+      <p class="nota-pago">El pago se coordina con recepción. Este sitio no solicita datos bancarios.</p>
+    </form>
+  </dialog>
+
+  <dialog class="modal-pedido modal-confirmacion" id="modal-confirmacion" aria-labelledby="titulo-confirmacion">
+    <div class="confirmacion-contenido">
+      <span class="marca-confirmacion" aria-hidden="true">✓</span>
+      <p class="antetitulo-tienda">Pedido preparado</p>
+      <h2 id="titulo-confirmacion" tabindex="-1">Todo listo para confirmar</h2>
+      <p id="texto-confirmacion"></p>
+      <div class="acciones-confirmacion">
+        <a class="boton-tienda boton-tienda--ancho" id="enviar-whatsapp" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+        <button class="boton-secundario" id="cerrar-confirmacion" type="button">Seguir comprando</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="anuncio-estado" id="anuncio-estado" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="pie-tienda">
+    <div class="contenedor pie-tienda__contenido">
+      <div>
+        <img src="assets/imagenes/logo-mayolo.png" alt="Hotel Mayolo" width="612" height="408">
+        <p>Comodidad, limpieza y atención personalizada en Huancayo.</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="index.html">Página del hotel</a>
+        <a href="#catalogo">Productos</a>
+        <a href="#como-comprar">Cómo comprar</a>
+      </nav>
+      <div>
+        <p><strong>944 216 425</strong></p>
+        <p>© 2026 Hotel Mayolo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="e-commerce.js?v=2" defer></script>
+</body>
+</html>
