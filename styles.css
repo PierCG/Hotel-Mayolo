@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --fondo:        #fbf8f1;
   --fondo-2:      #f3ede1;
@@ -50,13 +44,28 @@ a {
   text-decoration: none;
 }
 
-button, a, input, select, textarea {
-  font: inherit;
-}
-
 :focus-visible {
   outline: 3px solid rgba(138, 48, 67, .86);
   outline-offset: 4px;
+}
+
+.enlace-salto {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  padding: 10px 14px;
+  border-radius: var(--radio);
+  background: var(--crema);
+  color: var(--vino-oscuro);
+  font-weight: 800;
+  box-shadow: var(--sombra);
+  transform: translateY(-140%);
+  transition: transform .2s ease;
+}
+
+.enlace-salto:focus-visible {
+  transform: translateY(0);
 }
 
 .encabezado-sitio {
@@ -69,14 +78,16 @@ button, a, input, select, textarea {
 }
 
 .barra-navegacion {
-  width: var(--ancho-max);
+  width: calc(100% - 48px);
   min-height: 78px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0;
   gap: 24px;
+}
+
+.marca {
+  margin: 0;
+  padding: 0;
 }
 
 .marca img {
@@ -97,8 +108,16 @@ button, a, input, select, textarea {
 }
 
 .menu-navegacion a:not(.boton) {
+  color: inherit;
   position: relative;
   padding: 8px 0;
+}
+
+.menu-navegacion .nav-link:hover,
+.menu-navegacion .nav-link:focus,
+.pie-pagina .nav-link:hover,
+.pie-pagina .nav-link:focus {
+  color: inherit;
 }
 
 .menu-navegacion a:not(.boton)::after {
@@ -115,16 +134,11 @@ button, a, input, select, textarea {
   width: 100%;
 }
 
-.acciones-navegacion {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .enlace-carrito {
   position: relative;
   width: 48px;
   height: 48px;
+  padding: 0;
   display: inline-grid;
   flex: 0 0 auto;
   place-items: center;
@@ -162,6 +176,7 @@ button, a, input, select, textarea {
   display: none;
   width: 44px;
   height: 44px;
+  padding: 0;
   border: 1px solid rgba(199, 163, 90, .52);
   border-radius: var(--radio);
   background: transparent;
@@ -235,19 +250,6 @@ button, a, input, select, textarea {
   background: var(--negro);
 }
 
-.portada::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: -6%;
-  bottom: -28%;
-  width: 55%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(228, 199, 127, .34);
-  border-radius: 50%;
-  box-shadow: 0 0 0 34px rgba(228, 199, 127, .06), 0 0 0 68px rgba(228, 199, 127, .035);
-}
-
 .fondo-portada,
 .velo-portada {
   position: absolute;
@@ -294,6 +296,7 @@ h2 { font-size: clamp(2.15rem, 5vw, 4rem); }
 h3 { font-size: 1.55rem; }
 
 p {
+  margin: 0;
   color: var(--texto-tenue);
   overflow-wrap: break-word;
 }
@@ -317,34 +320,6 @@ p {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 0;
-}
-
-.sello-portada {
-  position: absolute;
-  right: max(26px, calc((100vw - 1140px) / 2));
-  bottom: 56px;
-  width: 156px;
-  aspect-ratio: 1;
-  margin: 0;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  border: 1px solid #e4c77f;
-  border-radius: 50%;
-  background: rgba(23, 21, 19, .88);
-  color: var(--crema);
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  transform: rotate(5deg);
-}
-
-.sello-portada span {
-  color: #e4c77f;
-  font-family: "Playfair Display", serif;
-  font-size: 2.1rem;
-  line-height: 1;
 }
 
 .seccion {
@@ -582,10 +557,6 @@ p {
 }
 
 .tarjeta-resena div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 16px;
   color: var(--cafe);
 }
 
@@ -607,22 +578,7 @@ p {
 }
 
 .formulario-reserva {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   padding: 30px;
-}
-
-.campo-formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.campos-divididos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
 }
 
 label {
@@ -631,27 +587,9 @@ label {
   font-weight: 700;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 13px 14px;
-  border: 1px solid rgba(111, 84, 44, .22);
-  border-radius: var(--radio);
-  background: rgba(255, 254, 250, .96);
-  color: var(--texto);
-  outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
-
 textarea {
   min-height: 126px;
   resize: vertical;
-}
-
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  border-color: var(--vino);
-  box-shadow: 0 0 0 4px rgba(138, 48, 67, .12);
 }
 
 .estado-formulario {
@@ -677,13 +615,12 @@ textarea:focus-visible {
 }
 
 .pie-pagina nav {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
 .pie-pagina a {
   color: var(--crema);
+  padding: 0;
   transition: color .2s ease;
 }
 
@@ -858,10 +795,6 @@ textarea:focus-visible {
   .acciones-portada .boton--contorno,
   .formulario-reserva .boton {
     width: 100%;
-  }
-
-  .sello-portada {
-    display: none;
   }
 
   .seccion { padding: 70px 0; }
@@ -1077,7 +1010,6 @@ textarea:focus-visible {
 
   .tarjeta-resena div {
     align-items: center;
-    gap: 10px;
   }
 
   .tarjeta-resena p:last-child {
@@ -1113,8 +1045,6 @@ textarea:focus-visible {
 
   .marco-mapa,
   .marco-mapa iframe { min-height: 340px; height: 340px; }
-
-  .campos-divididos { grid-template-columns: 1fr; }
 
   .cuadricula-galeria {
     width: 100%;

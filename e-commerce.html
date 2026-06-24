@@ -5,32 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tienda del Hotel Mayolo: productos útiles para tu estadía, entrega en recepción o directamente en tu habitación.">
   <title>Tienda Mayolo | Productos para tu estadía</title>
-  <link rel="icon" href="assets/imagenes/logo-mayolo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="e-commerce.css">
 </head>
 <body>
+  <a class="enlace-salto" href="#contenido-principal">Saltar al contenido principal</a>
   <header class="encabezado-tienda">
-    <nav class="navegacion-tienda" aria-label="Navegación principal">
-      <a class="marca-tienda" href="index.html" aria-label="Hotel Mayolo, volver a la página principal">
-        <img src="assets/imagenes/logo-mayolo.png" alt="" width="612" height="408">
+    <nav class="navegacion-tienda navbar navbar-expand-lg" aria-label="Navegación principal">
+      <a class="marca-tienda navbar-brand" href="index.html" aria-label="Hotel Mayolo, volver a la página principal">
+        <img src="assets/imagenes/hotel/logo-mayolo.png" alt="" width="612" height="408">
       </a>
 
-      <div class="menu-tienda" id="menu-tienda">
-        <a href="index.html">Hotel</a>
-        <a href="#catalogo">Productos</a>
-        <a href="#como-comprar">Cómo comprar</a>
+      <div class="menu-tienda navbar-nav" id="menu-tienda">
+        <a class="nav-link" href="index.html">Hotel</a>
+        <a class="nav-link" href="#catalogo">Productos</a>
+        <a class="nav-link" href="#como-comprar">Cómo comprar</a>
       </div>
 
-      <div class="acciones-cabecera">
-        <button class="boton-menu-tienda" id="boton-menu-tienda" type="button" aria-label="Abrir menú" aria-controls="menu-tienda" aria-expanded="false">
+      <div class="acciones-cabecera d-flex align-items-center gap-2">
+        <button class="boton-menu-tienda navbar-toggler" id="boton-menu-tienda" type="button" aria-label="Abrir menú" aria-controls="menu-tienda" aria-expanded="false">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </button>
-        <button class="boton-carrito-cabecera" id="abrir-carrito" type="button" aria-label="Abrir carrito de compras" aria-controls="carrito" aria-expanded="false">
+        <button class="boton-carrito-cabecera btn" id="abrir-carrito" type="button" aria-label="Abrir carrito de compras" aria-controls="carrito" aria-expanded="false">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M3 4h2l2.2 9.1a2 2 0 0 0 2 1.5h7.7a2 2 0 0 0 1.9-1.4L20.5 7H7M10 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
           <span class="contador-carrito" id="contador-carrito" aria-hidden="true">0</span>
         </button>
@@ -40,18 +39,14 @@
 
   <main id="contenido-principal">
     <section class="hero-tienda" aria-labelledby="titulo-tienda">
-      <img class="hero-tienda__imagen" src="assets/imagenes/recepcion.jpg" alt="Recepción del Hotel Mayolo, punto de recojo de los productos" width="1280" height="960">
+      <img class="hero-tienda__imagen" src="assets/imagenes/hotel/recepcion.jpg" alt="Recepción del Hotel Mayolo, punto de recojo de los productos" width="1280" height="960">
       <div class="hero-tienda__velo" aria-hidden="true"></div>
       <div class="contenedor hero-tienda__contenido">
         <p class="antetitulo-tienda">La despensa del huésped</p>
         <h1 id="titulo-tienda">Todo lo que tu estadía puede necesitar.</h1>
-        <p>Una selección breve y honesta de esenciales, detalles locales y antojos. Pide en línea y recibe en tu habitación o recoge en recepción.</p>
-        <a class="boton-tienda" href="#catalogo">Explorar productos</a>
+        <p>Bebidas, galletas y productos de aseo para resolver lo básico sin salir del hotel.</p>
+        <a class="boton-tienda btn" href="#catalogo">Explorar productos</a>
       </div>
-      <p class="sello-entrega">
-        <span aria-hidden="true">24/7</span>
-        Entrega en el hotel
-      </p>
     </section>
 
     <section class="franja-beneficios" aria-label="Beneficios de la tienda">
@@ -75,18 +70,18 @@
         <div class="controles-catalogo" role="group" aria-label="Filtros del catálogo">
           <div class="campo-busqueda">
             <label for="buscar-producto">Buscar un producto</label>
-            <input class="control-formulario" id="buscar-producto" type="search" placeholder="Ejemplo: café o aseo" autocomplete="off">
+            <input class="control-formulario form-control" id="buscar-producto" type="search" placeholder="Ejemplo: agua o aseo" autocomplete="off">
           </div>
           <div class="grupo-filtros" role="group" aria-label="Filtrar por categoría">
-            <button class="filtro activo" type="button" data-categoria="todos" aria-pressed="true">Todos</button>
-            <button class="filtro" type="button" data-categoria="bebidas" aria-pressed="false">Bebidas</button>
-            <button class="filtro" type="button" data-categoria="bienestar" aria-pressed="false">Bienestar</button>
-            <button class="filtro" type="button" data-categoria="local" aria-pressed="false">Detalles locales</button>
+            <button class="filtro activo btn btn-sm" type="button" data-categoria="todos" aria-pressed="true">Todos</button>
+            <button class="filtro btn btn-sm" type="button" data-categoria="bebidas" aria-pressed="false">Bebidas</button>
+            <button class="filtro btn btn-sm" type="button" data-categoria="galletas" aria-pressed="false">Galletas</button>
+            <button class="filtro btn btn-sm" type="button" data-categoria="aseo" aria-pressed="false">Aseo</button>
           </div>
         </div>
 
         <p class="resultado-busqueda" id="resultado-busqueda" role="status" aria-live="polite"></p>
-        <div class="rejilla-productos" id="lista-productos"></div>
+        <div class="rejilla-productos" id="lista-productos" aria-describedby="resultado-busqueda"></div>
       </div>
     </section>
 
@@ -112,70 +107,70 @@
         <p class="antetitulo-tienda">Tu selección</p>
         <h2 id="titulo-carrito" tabindex="-1">Carrito de compra</h2>
       </div>
-      <button class="boton-icono" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button>
+      <button class="boton-icono btn" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button>
     </div>
     <div class="carrito__contenido">
       <p class="carrito-vacio" id="carrito-vacio">Tu carrito está vacío. Explora el catálogo y agrega algo para tu estadía.</p>
       <ul class="lista-carrito" id="lista-carrito" aria-label="Productos en el carrito"></ul>
     </div>
     <div class="carrito__resumen">
-      <p><span>Subtotal</span><strong id="subtotal-carrito">S/ 0.00</strong></p>
-      <p><span>Entrega en el hotel</span><strong>Gratis</strong></p>
-      <p class="total-carrito"><span>Total</span><strong id="total-carrito">S/ 0.00</strong></p>
-      <button class="boton-tienda boton-tienda--ancho" id="ir-checkout" type="button" disabled>Continuar con el pedido</button>
+      <p class="d-flex justify-content-between gap-3"><span>Subtotal</span><strong id="subtotal-carrito">S/ 0.00</strong></p>
+      <p class="d-flex justify-content-between gap-3"><span>Entrega en el hotel</span><strong>Gratis</strong></p>
+      <p class="total-carrito d-flex justify-content-between gap-3"><span>Total</span><strong id="total-carrito">S/ 0.00</strong></p>
+      <button class="boton-tienda boton-tienda--ancho btn" id="ir-checkout" type="button" disabled>Continuar con el pedido</button>
     </div>
   </aside>
 
   <dialog class="modal-pedido" id="modal-pedido" aria-labelledby="titulo-pedido">
     <form class="formulario-pedido" id="formulario-pedido" novalidate>
-      <div class="modal-pedido__cabecera">
+      <div class="modal-pedido__cabecera d-flex align-items-start justify-content-between gap-3">
         <div>
           <p class="antetitulo-tienda">Último paso</p>
           <h2 id="titulo-pedido">Confirma tu pedido</h2>
         </div>
-        <button class="boton-icono" id="cerrar-pedido" type="button" aria-label="Cerrar formulario de pedido">×</button>
+        <button class="boton-icono btn" id="cerrar-pedido" type="button" aria-label="Cerrar formulario de pedido">×</button>
       </div>
 
       <div class="resumen-checkout" id="resumen-checkout" role="region" aria-label="Resumen del pedido"></div>
       <div class="errores-formulario" id="errores-formulario" role="alert" tabindex="-1" hidden></div>
 
-      <div class="campos-pedido">
-        <div>
+      <div class="campos-pedido row g-3">
+        <div class="col-md-6">
           <label class="etiqueta-formulario" for="nombre-pedido">Nombre completo</label>
-          <input class="control-formulario" id="nombre-pedido" name="nombre" type="text" autocomplete="name" required>
+          <input class="control-formulario form-control" id="nombre-pedido" name="nombre" type="text" autocomplete="name" required>
           <span class="mensaje-campo" id="error-nombre"></span>
         </div>
-        <div>
+        <div class="col-md-6">
           <label class="etiqueta-formulario" for="telefono-pedido">Teléfono</label>
-          <input class="control-formulario" id="telefono-pedido" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required>
+          <input class="control-formulario form-control" id="telefono-pedido" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required>
           <span class="mensaje-campo" id="error-telefono"></span>
         </div>
       </div>
 
       <fieldset class="opciones-entrega">
         <legend>¿Cómo deseas recibirlo?</legend>
-        <label><input type="radio" name="entrega" value="Habitación" checked> Entrega en mi habitación</label>
-        <label><input type="radio" name="entrega" value="Recepción"> Recojo en recepción</label>
+        <label class="form-check"><input class="form-check-input" type="radio" name="entrega" value="Habitación" checked> <span class="form-check-label">Entrega en mi habitación</span></label>
+        <label class="form-check"><input class="form-check-input" type="radio" name="entrega" value="Recepción"> <span class="form-check-label">Recojo en recepción</span></label>
       </fieldset>
 
       <div id="campo-habitacion">
         <label class="etiqueta-formulario" for="habitacion-pedido">Número de habitación</label>
-        <input class="control-formulario" id="habitacion-pedido" name="habitacion" type="text" inputmode="numeric" autocomplete="off" required>
+        <input class="control-formulario form-control" id="habitacion-pedido" name="habitacion" type="text" inputmode="numeric" autocomplete="off" required>
         <span class="mensaje-campo" id="error-habitacion"></span>
       </div>
 
       <div>
         <label class="etiqueta-formulario" for="nota-pedido">Indicaciones adicionales <span>(opcional)</span></label>
-        <textarea class="control-formulario" id="nota-pedido" name="nota" rows="3" placeholder="Por ejemplo: entregar a las 8:00 p. m."></textarea>
+        <textarea class="control-formulario form-control" id="nota-pedido" name="nota" rows="3" placeholder="Por ejemplo: entregar a las 8:00 p. m."></textarea>
       </div>
 
-      <label class="aceptacion-pedido">
-        <input id="aceptar-pedido" type="checkbox" required>
-        Confirmo que revisaré el detalle antes de enviarlo por WhatsApp.
+      <label class="aceptacion-pedido form-check">
+        <input class="form-check-input" id="aceptar-pedido" type="checkbox" required>
+        <span class="form-check-label">Confirmo que revisaré el detalle antes de enviarlo por WhatsApp.</span>
       </label>
       <span class="mensaje-campo" id="error-aceptacion"></span>
 
-      <button class="boton-tienda boton-tienda--ancho" type="submit">Revisar y confirmar pedido</button>
+      <button class="boton-tienda boton-tienda--ancho btn" type="submit">Revisar y confirmar pedido</button>
       <p class="nota-pago">El pago se coordina con recepción. Este sitio no solicita datos bancarios.</p>
     </form>
   </dialog>
@@ -186,9 +181,9 @@
       <p class="antetitulo-tienda">Pedido preparado</p>
       <h2 id="titulo-confirmacion" tabindex="-1">Todo listo para confirmar</h2>
       <p id="texto-confirmacion"></p>
-      <div class="acciones-confirmacion">
-        <a class="boton-tienda boton-tienda--ancho" id="enviar-whatsapp" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
-        <button class="boton-secundario" id="cerrar-confirmacion" type="button">Seguir comprando</button>
+      <div class="acciones-confirmacion d-grid gap-2">
+        <a class="boton-tienda boton-tienda--ancho btn" id="enviar-whatsapp" href="https://wa.me/51944216425" target="_blank" rel="noopener" aria-label="Enviar pedido por WhatsApp, abre en una pestaña nueva">Enviar pedido por WhatsApp</a>
+        <button class="boton-secundario btn" id="cerrar-confirmacion" type="button">Seguir comprando</button>
       </div>
     </div>
   </dialog>
@@ -198,13 +193,13 @@
   <footer class="pie-tienda">
     <div class="contenedor pie-tienda__contenido">
       <div>
-        <img src="assets/imagenes/logo-mayolo.png" alt="Hotel Mayolo" width="612" height="408">
+        <img src="assets/imagenes/hotel/logo-mayolo.png" alt="Hotel Mayolo" width="612" height="408">
         <p>Comodidad, limpieza y atención personalizada en Huancayo.</p>
       </div>
-      <nav aria-label="Enlaces del pie de página">
-        <a href="index.html">Página del hotel</a>
-        <a href="#catalogo">Productos</a>
-        <a href="#como-comprar">Cómo comprar</a>
+      <nav class="nav flex-column gap-2" aria-label="Enlaces del pie de página">
+        <a class="nav-link p-0" href="index.html">Página del hotel</a>
+        <a class="nav-link p-0" href="#catalogo">Productos</a>
+        <a class="nav-link p-0" href="#como-comprar">Cómo comprar</a>
       </nav>
       <div>
         <p><strong>944 216 425</strong></p>

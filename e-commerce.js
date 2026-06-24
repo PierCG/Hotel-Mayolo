@@ -1,108 +1,148 @@
 (function() {
   "use strict";
 
-var WHATSAPP_HOTEL = "51944216425";
-var CLAVE_CARRITO = "hotel-mayolo-carrito";
+const WHATSAPP_HOTEL = "51944216425";
+const CLAVE_CARRITO = "hotel-mayolo-carrito";
 
-var productos = [
+const productos = [
   {
-    id: "agua-mineral",
-    nombre: "Agua mineral",
-    descripcion: "Botella de 625 ml, fría o al tiempo. Ideal para tener junto a la cama.",
+    id: "coca-cola-1l",
+    nombre: "Coca-Cola 1 L",
+    descripcion: "Gaseosa familiar de 1 litro para compartir en la habitación.",
+    precio: 8,
+    categoria: "bebidas",
+    categoriaTexto: "Bebidas",
+    imagen: "assets/imagenes/productos/coca-cola-1l.png",
+    alt: "Botella de Coca-Cola de un litro"
+  },
+  {
+    id: "inca-kola-sin-azucar-1l",
+    nombre: "Inca Kola sin azúcar 1 L",
+    descripcion: "Botella de 1 litro, opción sin azúcar para acompañar tu estadía.",
+    precio: 8,
+    categoria: "bebidas",
+    categoriaTexto: "Bebidas",
+    imagen: "assets/imagenes/productos/inca-kola-sin-azucar-1l.png",
+    alt: "Botella de Inca Kola sin azúcar de un litro"
+  },
+  {
+    id: "agua-cielo",
+    nombre: "Agua Cielo",
+    descripcion: "Agua sin gas en botella personal para tener a mano durante el día.",
     precio: 4,
     categoria: "bebidas",
     categoriaTexto: "Bebidas",
-    imagen: "assets/imagenes/productos/agua-mineral-producto.webp",
-    alt: "Botella transparente de agua mineral fría en una habitación de hotel"
+    imagen: "assets/imagenes/productos/agua-cielo.png",
+    alt: "Botella de agua Cielo"
   },
   {
-    id: "cafe-altura",
-    nombre: "Café de altura",
-    descripcion: "Café filtrante de la sierra central con azúcar, endulzante y vaso térmico.",
-    precio: 9,
+    id: "agua-san-luis",
+    nombre: "Agua San Luis",
+    descripcion: "Agua sin gas en botella personal, práctica para la habitación.",
+    precio: 4,
     categoria: "bebidas",
     categoriaTexto: "Bebidas",
-    imagen: "assets/imagenes/productos/cafe-altura.jpg",
-    alt: "Tazas de café recién preparado vistas desde arriba"
+    imagen: "assets/imagenes/productos/agua-san-luis.png",
+    alt: "Botella de agua San Luis"
   },
   {
-    id: "kit-aseo",
-    nombre: "Kit de aseo",
-    descripcion: "Cepillo dental, pasta, peine y jabón en una bolsa reutilizable.",
-    precio: 12,
-    categoria: "bienestar",
-    categoriaTexto: "Bienestar",
-    imagen: "assets/imagenes/productos/kit-aseo-producto.webp",
-    alt: "Kit de aseo con cepillo, pasta dental, jabón y peine"
+    id: "galleta-casino-menta",
+    nombre: "Galleta Casino menta",
+    descripcion: "Galleta rellena sabor menta, presentación individual.",
+    precio: 2.5,
+    categoria: "galletas",
+    categoriaTexto: "Galletas",
+    imagen: "assets/imagenes/productos/galleta-casino-menta.png",
+    alt: "Paquete de galleta Casino sabor menta"
   },
   {
-    id: "pantuflas",
-    nombre: "Pantuflas de descanso",
-    descripcion: "Par ligero y cómodo para usar dentro de la habitación. Talla estándar.",
-    precio: 15,
-    categoria: "bienestar",
-    categoriaTexto: "Bienestar",
-    imagen: "assets/imagenes/productos/pantuflas-producto.webp",
-    alt: "Par de pantuflas de hotel color crema sobre lino"
+    id: "galleta-tentacion-chocolate",
+    nombre: "Galleta Tentación chocolate",
+    descripcion: "Galleta rellena sabor chocolate, presentación individual.",
+    precio: 2.5,
+    categoria: "galletas",
+    categoriaTexto: "Galletas",
+    imagen: "assets/imagenes/productos/galleta-tentacion-chocolate.png",
+    alt: "Paquete de galleta Tentación sabor chocolate"
   },
   {
-    id: "snack-andino",
-    nombre: "Snack andino",
-    descripcion: "Mix individual de cancha serrana, habas crocantes y frutos secos.",
-    precio: 10,
-    categoria: "local",
-    categoriaTexto: "Detalle local",
-    imagen: "assets/imagenes/productos/snack-andino-producto.webp",
-    alt: "Bowl de snack andino con maíz tostado, habas y frutos secos"
+    id: "galleta-picaras-chocolate",
+    nombre: "Galleta Pícaras",
+    descripcion: "Galleta bañada con cobertura sabor chocolate.",
+    precio: 2.5,
+    categoria: "galletas",
+    categoriaTexto: "Galletas",
+    imagen: "assets/imagenes/productos/galleta-picaras-chocolate.png",
+    alt: "Paquete de galletas Pícaras con cobertura de chocolate"
   },
   {
-    id: "taza-mayolo",
-    nombre: "Taza Mayolo",
-    descripcion: "Recuerdo de cerámica con identidad huancaína, empacado para viaje.",
-    precio: 24,
-    categoria: "local",
-    categoriaTexto: "Detalle local",
-    imagen: "assets/imagenes/productos/taza-mayolo.jpg",
-    alt: "Taza de cerámica blanca sobre una mesa clara"
+    id: "head-shoulders-sachet",
+    nombre: "Head & Shoulders sachet",
+    descripcion: "Shampoo control caspa en sachet personal de 18 ml.",
+    precio: 2,
+    categoria: "aseo",
+    categoriaTexto: "Aseo",
+    imagen: "assets/imagenes/productos/shampoo-head-shoulders-sachet.png",
+    alt: "Sachet de shampoo Head & Shoulders"
+  },
+  {
+    id: "sedal-duo-sachet",
+    nombre: "Sedal duo sachet",
+    descripcion: "Shampoo y acondicionador 2 en 1 en sachet personal de 40 ml.",
+    precio: 2,
+    categoria: "aseo",
+    categoriaTexto: "Aseo",
+    imagen: "assets/imagenes/productos/sedal-duo-sachet.png",
+    alt: "Sachet Sedal duo shampoo y acondicionador"
+  },
+  {
+    id: "pantene-restauracion-sachet",
+    nombre: "Pantene restauración sachet",
+    descripcion: "Shampoo y acondicionador Pantene restauración en sachet.",
+    precio: 2,
+    categoria: "aseo",
+    categoriaTexto: "Aseo",
+    imagen: "assets/imagenes/productos/pantene-restauracion-sachet.png",
+    alt: "Sachet Pantene shampoo y acondicionador restauración"
   }
 ];
 
-var carrito = cargarCarrito();
-var categoriaActiva = "todos";
-var focoAntesDelCarrito = null;
-var temporizadorAnuncio = null;
+let carrito = cargarCarrito();
+let categoriaActiva = "todos";
+let focoAntesDelCarrito = null;
+let temporizadorAnuncio = null;
 
-var listaProductos = document.getElementById("lista-productos");
-var buscarProducto = document.getElementById("buscar-producto");
-var resultadoBusqueda = document.getElementById("resultado-busqueda");
-var filtros = document.querySelectorAll(".filtro");
-var botonMenu = document.getElementById("boton-menu-tienda");
-var menuTienda = document.getElementById("menu-tienda");
-var botonAbrirCarrito = document.getElementById("abrir-carrito");
-var botonCerrarCarrito = document.getElementById("cerrar-carrito");
-var panelCarrito = document.getElementById("carrito");
-var fondoCarrito = document.getElementById("fondo-carrito");
-var listaCarrito = document.getElementById("lista-carrito");
-var carritoVacio = document.getElementById("carrito-vacio");
-var contadorCarrito = document.getElementById("contador-carrito");
-var subtotalCarrito = document.getElementById("subtotal-carrito");
-var totalCarrito = document.getElementById("total-carrito");
-var botonCheckout = document.getElementById("ir-checkout");
-var modalPedido = document.getElementById("modal-pedido");
-var botonCerrarPedido = document.getElementById("cerrar-pedido");
-var formularioPedido = document.getElementById("formulario-pedido");
-var resumenCheckout = document.getElementById("resumen-checkout");
-var campoHabitacionContenedor = document.getElementById("campo-habitacion");
-var campoHabitacion = document.getElementById("habitacion-pedido");
-var modalConfirmacion = document.getElementById("modal-confirmacion");
-var botonCerrarConfirmacion = document.getElementById("cerrar-confirmacion");
-var textoConfirmacion = document.getElementById("texto-confirmacion");
-var enlaceWhatsApp = document.getElementById("enviar-whatsapp");
-var anuncioEstado = document.getElementById("anuncio-estado");
+const listaProductos = document.getElementById("lista-productos");
+const buscarProducto = document.getElementById("buscar-producto");
+const resultadoBusqueda = document.getElementById("resultado-busqueda");
+const filtros = document.querySelectorAll(".filtro");
+const botonMenu = document.getElementById("boton-menu-tienda");
+const menuTienda = document.getElementById("menu-tienda");
+const botonAbrirCarrito = document.getElementById("abrir-carrito");
+const botonCerrarCarrito = document.getElementById("cerrar-carrito");
+const panelCarrito = document.getElementById("carrito");
+const fondoCarrito = document.getElementById("fondo-carrito");
+const listaCarrito = document.getElementById("lista-carrito");
+const carritoVacio = document.getElementById("carrito-vacio");
+const contadorCarrito = document.getElementById("contador-carrito");
+const subtotalCarrito = document.getElementById("subtotal-carrito");
+const totalCarrito = document.getElementById("total-carrito");
+const botonCheckout = document.getElementById("ir-checkout");
+const modalPedido = document.getElementById("modal-pedido");
+const botonCerrarPedido = document.getElementById("cerrar-pedido");
+const formularioPedido = document.getElementById("formulario-pedido");
+const resumenCheckout = document.getElementById("resumen-checkout");
+const campoHabitacionContenedor = document.getElementById("campo-habitacion");
+const campoHabitacion = document.getElementById("habitacion-pedido");
+const modalConfirmacion = document.getElementById("modal-confirmacion");
+const botonCerrarConfirmacion = document.getElementById("cerrar-confirmacion");
+const textoConfirmacion = document.getElementById("texto-confirmacion");
+const enlaceWhatsApp = document.getElementById("enviar-whatsapp");
+const anuncioEstado = document.getElementById("anuncio-estado");
 
 function cargarCarrito() {
   try {
-    var datos = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
+    let datos = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
     if (!Array.isArray(datos)) {
       return [];
     }
@@ -143,7 +183,7 @@ function obtenerCantidadTotal() {
 
 function obtenerTotal() {
   return carrito.reduce(function(total, item) {
-    var producto = obtenerProducto(item.id);
+    let producto = obtenerProducto(item.id);
     return producto ? total + producto.precio * item.cantidad : total;
   }, 0);
 }
@@ -158,7 +198,7 @@ function anunciar(mensaje) {
 }
 
 function crearElemento(etiqueta, opciones) {
-  var elemento = document.createElement(etiqueta);
+  let elemento = document.createElement(etiqueta);
   opciones = opciones || {};
 
   if (opciones.className) {
@@ -179,10 +219,10 @@ function crearElemento(etiqueta, opciones) {
 }
 
 function crearTarjetaProducto(producto) {
-  var tarjeta = crearElemento("article", { className: "tarjeta-producto" });
-  var visual = crearElemento("div", { className: "producto-visual" });
-  var imagen = crearElemento("img", {
-    className: "producto-imagen",
+  let tarjeta = crearElemento("article", { className: "tarjeta-producto card h-100" });
+  let visual = crearElemento("div", { className: "producto-visual" });
+  let imagen = crearElemento("img", {
+    className: "producto-imagen card-img-top img-fluid",
     attributes: {
       src: producto.imagen,
       alt: producto.alt,
@@ -191,20 +231,20 @@ function crearTarjetaProducto(producto) {
       loading: "lazy"
     }
   });
-  var etiqueta = crearElemento("span", {
-    className: "producto-etiqueta",
+  let etiqueta = crearElemento("span", {
+    className: "producto-etiqueta badge rounded-pill",
     textContent: producto.categoriaTexto
   });
-  var contenido = crearElemento("div", { className: "producto-contenido" });
-  var titulo = crearElemento("h3", { textContent: producto.nombre });
-  var descripcion = crearElemento("p", { textContent: producto.descripcion });
-  var pie = crearElemento("div", { className: "producto-pie" });
-  var precio = crearElemento("strong", {
+  let contenido = crearElemento("div", { className: "producto-contenido card-body" });
+  let titulo = crearElemento("h3", { textContent: producto.nombre });
+  let descripcion = crearElemento("p", { textContent: producto.descripcion });
+  let pie = crearElemento("div", { className: "producto-pie d-flex align-items-center justify-content-between gap-3" });
+  let precio = crearElemento("strong", {
     className: "producto-precio",
     textContent: formatearPrecio(producto.precio)
   });
-  var boton = crearElemento("button", {
-    className: "agregar-producto",
+  let boton = crearElemento("button", {
+    className: "agregar-producto btn btn-sm",
     textContent: "Agregar",
     attributes: {
       type: "button",
@@ -222,8 +262,8 @@ function crearTarjetaProducto(producto) {
 }
 
 function crearItemCarrito(item, producto) {
-  var elemento = crearElemento("li", { className: "item-carrito" });
-  var imagen = crearElemento("img", {
+  let elemento = crearElemento("li", { className: "item-carrito" });
+  let imagen = crearElemento("img", {
     className: "item-carrito__imagen",
     attributes: {
       src: producto.imagen,
@@ -232,22 +272,22 @@ function crearItemCarrito(item, producto) {
       height: "72"
     }
   });
-  var detalle = crearElemento("div", { className: "item-carrito__detalle" });
-  var titulo = crearElemento("h3", { textContent: producto.nombre });
-  var precioUnidad = crearElemento("p", {
+  let detalle = crearElemento("div", { className: "item-carrito__detalle" });
+  let titulo = crearElemento("h3", { textContent: producto.nombre });
+  let precioUnidad = crearElemento("p", {
     textContent: formatearPrecio(producto.precio) + " por unidad"
   });
-  var subtotal = crearElemento("strong", {
+  let subtotal = crearElemento("strong", {
     textContent: formatearPrecio(producto.precio * item.cantidad)
   });
-  var controles = crearElemento("div", { className: "controles-cantidad" });
-  var selector = crearElemento("div", {
+  let controles = crearElemento("div", { className: "controles-cantidad d-flex align-items-center justify-content-between gap-3" });
+  let selector = crearElemento("div", {
     className: "selector-cantidad",
     attributes: {
       "aria-label": "Cantidad de " + producto.nombre
     }
   });
-  var restar = crearElemento("button", {
+  let restar = crearElemento("button", {
     textContent: "\u2212",
     attributes: {
       type: "button",
@@ -256,13 +296,13 @@ function crearItemCarrito(item, producto) {
       "aria-label": "Quitar una unidad de " + producto.nombre
     }
   });
-  var cantidad = crearElemento("span", {
+  let cantidad = crearElemento("span", {
     textContent: item.cantidad,
     attributes: {
       "aria-label": item.cantidad + " unidades"
     }
   });
-  var sumar = crearElemento("button", {
+  let sumar = crearElemento("button", {
     textContent: "+",
     attributes: {
       type: "button",
@@ -271,8 +311,8 @@ function crearItemCarrito(item, producto) {
       "aria-label": "Agregar una unidad de " + producto.nombre
     }
   });
-  var eliminar = crearElemento("button", {
-    className: "eliminar-producto",
+  let eliminar = crearElemento("button", {
+    className: "eliminar-producto btn btn-sm",
     textContent: "Eliminar " + producto.nombre,
     attributes: {
       type: "button",
@@ -290,17 +330,17 @@ function crearItemCarrito(item, producto) {
 }
 
 function renderizarProductos() {
-  var consulta = normalizarTexto(buscarProducto.value.trim());
-  var productosFiltrados = productos.filter(function(producto) {
-    var coincideCategoria = categoriaActiva === "todos" || producto.categoria === categoriaActiva;
-    var textoProducto = normalizarTexto(producto.nombre + " " + producto.descripcion + " " + producto.categoriaTexto);
+  let consulta = normalizarTexto(buscarProducto.value.trim());
+  let productosFiltrados = productos.filter(function(producto) {
+    let coincideCategoria = categoriaActiva === "todos" || producto.categoria === categoriaActiva;
+    let textoProducto = normalizarTexto(producto.nombre + " " + producto.descripcion + " " + producto.categoriaTexto);
     return coincideCategoria && textoProducto.includes(consulta);
   });
 
   listaProductos.replaceChildren();
 
   if (!productosFiltrados.length) {
-    var sinResultados = document.createElement("p");
+    let sinResultados = document.createElement("p");
     sinResultados.className = "sin-resultados";
     sinResultados.textContent = "No encontramos productos con esos criterios. Prueba con otra búsqueda o categoría.";
     listaProductos.appendChild(sinResultados);
@@ -310,19 +350,19 @@ function renderizarProductos() {
     });
   }
 
-  var cantidad = productosFiltrados.length;
+  let cantidad = productosFiltrados.length;
   resultadoBusqueda.textContent = cantidad === 1 ? "1 producto disponible." : cantidad + " productos disponibles.";
 }
 
 function renderizarCarrito() {
   listaCarrito.replaceChildren();
-  var cantidadTotal = obtenerCantidadTotal();
-  var total = obtenerTotal();
+  let cantidadTotal = obtenerCantidadTotal();
+  let total = obtenerTotal();
 
   carritoVacio.hidden = carrito.length > 0;
 
   carrito.forEach(function(item) {
-    var producto = obtenerProducto(item.id);
+    let producto = obtenerProducto(item.id);
     if (!producto) {
       return;
     }
@@ -339,12 +379,12 @@ function renderizarCarrito() {
 }
 
 function agregarAlCarrito(id) {
-  var producto = obtenerProducto(id);
+  let producto = obtenerProducto(id);
   if (!producto) {
     return;
   }
 
-  var item = carrito.find(function(elemento) {
+  let item = carrito.find(function(elemento) {
     return elemento.id === id;
   });
 
@@ -355,12 +395,12 @@ function agregarAlCarrito(id) {
   }
 
   renderizarCarrito();
-  var cantidadTotal = obtenerCantidadTotal();
+  let cantidadTotal = obtenerCantidadTotal();
   anunciar(producto.nombre + " agregado al carrito. Ahora tienes " + cantidadTotal + (cantidadTotal === 1 ? " producto." : " productos."));
 }
 
 function cambiarCantidad(id, cambio) {
-  var item = carrito.find(function(elemento) {
+  let item = carrito.find(function(elemento) {
     return elemento.id === id;
   });
 
@@ -378,7 +418,7 @@ function cambiarCantidad(id, cambio) {
 }
 
 function eliminarDelCarrito(id) {
-  var producto = obtenerProducto(id);
+  let producto = obtenerProducto(id);
   carrito = carrito.filter(function(item) {
     return item.id !== id;
   });
@@ -389,7 +429,7 @@ function eliminarDelCarrito(id) {
 }
 
 function alternarMenu() {
-  var abierto = menuTienda.classList.toggle("abierto");
+  let abierto = menuTienda.classList.toggle("abierto");
   botonMenu.classList.toggle("abierto", abierto);
   botonMenu.setAttribute("aria-expanded", String(abierto));
   botonMenu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
@@ -436,13 +476,13 @@ function cerrarCarrito(devolverFoco) {
 }
 
 function prepararCheckout() {
-  var total = obtenerTotal();
-  var cantidad = obtenerCantidadTotal();
-  var resumen = crearElemento("p");
-  var cantidadResumen = crearElemento("span", {
+  let total = obtenerTotal();
+  let cantidad = obtenerCantidadTotal();
+  let resumen = crearElemento("p", { className: "d-flex justify-content-between gap-3 mb-0" });
+  let cantidadResumen = crearElemento("span", {
     textContent: cantidad + (cantidad === 1 ? " producto" : " productos")
   });
-  var totalResumen = crearElemento("strong", {
+  let totalResumen = crearElemento("strong", {
     textContent: formatearPrecio(total)
   });
 
@@ -468,11 +508,11 @@ function mostrarError(campo, idError, mensaje) {
 }
 
 function validarFormulario() {
-  var errores = [];
-  var nombre = document.getElementById("nombre-pedido");
-  var telefono = document.getElementById("telefono-pedido");
-  var aceptacion = document.getElementById("aceptar-pedido");
-  var entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
+  let errores = [];
+  let nombre = document.getElementById("nombre-pedido");
+  let telefono = document.getElementById("telefono-pedido");
+  let aceptacion = document.getElementById("aceptar-pedido");
+  let entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
 
   limpiarError(nombre, "error-nombre");
   limpiarError(telefono, "error-telefono");
@@ -480,30 +520,30 @@ function validarFormulario() {
   limpiarError(aceptacion, "error-aceptacion");
 
   if (nombre.value.trim().length < 3) {
-    var errorNombre = "Escribe tu nombre completo (mínimo 3 caracteres).";
+    let errorNombre = "Escribe tu nombre completo (mínimo 3 caracteres).";
     mostrarError(nombre, "error-nombre", errorNombre);
     errores.push({ campo: nombre, mensaje: errorNombre });
   }
 
   if (telefono.value.replace(/\D/g, "").length < 7) {
-    var errorTelefono = "Ingresa un teléfono válido de al menos 7 dígitos.";
+    let errorTelefono = "Ingresa un teléfono válido de al menos 7 dígitos.";
     mostrarError(telefono, "error-telefono", errorTelefono);
     errores.push({ campo: telefono, mensaje: errorTelefono });
   }
 
   if (entrega === "Habitación" && !campoHabitacion.value.trim()) {
-    var errorHabitacion = "Indica el número de habitación para poder entregarte el pedido.";
+    let errorHabitacion = "Indica el número de habitación para poder entregarte el pedido.";
     mostrarError(campoHabitacion, "error-habitacion", errorHabitacion);
     errores.push({ campo: campoHabitacion, mensaje: errorHabitacion });
   }
 
   if (!aceptacion.checked) {
-    var errorAceptacion = "Marca la confirmación para continuar.";
+    let errorAceptacion = "Marca la confirmación para continuar.";
     mostrarError(aceptacion, "error-aceptacion", errorAceptacion);
     errores.push({ campo: aceptacion, mensaje: errorAceptacion });
   }
 
-  var resumenErrores = document.getElementById("errores-formulario");
+  let resumenErrores = document.getElementById("errores-formulario");
   if (errores.length) {
     resumenErrores.hidden = false;
     resumenErrores.textContent = "No pudimos continuar. " + errores.map(function(error) {
@@ -520,16 +560,16 @@ function validarFormulario() {
 }
 
 function armarDetallePedido(datos, carritoConfirmado, numeroPedido) {
-  var lineas = carritoConfirmado.map(function(item) {
-    var producto = obtenerProducto(item.id);
+  let lineas = carritoConfirmado.map(function(item) {
+    let producto = obtenerProducto(item.id);
     return "• " + producto.nombre + " x" + item.cantidad + " — " + formatearPrecio(producto.precio * item.cantidad);
   });
-  var total = carritoConfirmado.reduce(function(suma, item) {
-    var producto = obtenerProducto(item.id);
+  let total = carritoConfirmado.reduce(function(suma, item) {
+    let producto = obtenerProducto(item.id);
     return suma + producto.precio * item.cantidad;
   }, 0);
 
-  var texto = "Hola Hotel Mayolo. Quiero confirmar el pedido " + numeroPedido + ".\n\n";
+  let texto = "Hola Hotel Mayolo. Quiero confirmar el pedido " + numeroPedido + ".\n\n";
   texto += lineas.join("\n") + "\n";
   texto += "Total: " + formatearPrecio(total) + "\n\n";
   texto += "Nombre: " + datos.nombre + "\n";
@@ -550,20 +590,20 @@ function confirmarPedido(evento) {
     return;
   }
 
-  var carritoConfirmado = carrito.map(function(item) {
+  let carritoConfirmado = carrito.map(function(item) {
     return { id: item.id, cantidad: item.cantidad };
   });
-  var entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
-  var datos = {
+  let entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
+  let datos = {
     nombre: document.getElementById("nombre-pedido").value.trim(),
     telefono: document.getElementById("telefono-pedido").value.trim(),
     entrega: entrega,
     habitacion: campoHabitacion.value.trim(),
     nota: document.getElementById("nota-pedido").value.trim()
   };
-  var numeroPedido = "MAY-" + String(Date.now()).slice(-6);
-  var detalle = armarDetallePedido(datos, carritoConfirmado, numeroPedido);
-  var cantidadConfirmada = obtenerCantidadTotal();
+  let numeroPedido = "MAY-" + String(Date.now()).slice(-6);
+  let detalle = armarDetallePedido(datos, carritoConfirmado, numeroPedido);
+  let cantidadConfirmada = obtenerCantidadTotal();
 
   enlaceWhatsApp.href = "https://wa.me/" + WHATSAPP_HOTEL + "?text=" + encodeURIComponent(detalle);
   textoConfirmacion.textContent = numeroPedido + " incluye " + cantidadConfirmada + (cantidadConfirmada === 1 ? " producto" : " productos") + " por " + formatearPrecio(obtenerTotal()) + ". Envíalo por WhatsApp para que recepción confirme la disponibilidad.";
@@ -578,8 +618,8 @@ function confirmarPedido(evento) {
 }
 
 function actualizarCampoHabitacion() {
-  var entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
-  var necesitaHabitacion = entrega === "Habitación";
+  let entrega = formularioPedido.querySelector('input[name="entrega"]:checked').value;
+  let necesitaHabitacion = entrega === "Habitación";
   campoHabitacionContenedor.hidden = !necesitaHabitacion;
   campoHabitacion.required = necesitaHabitacion;
   if (!necesitaHabitacion) {
@@ -589,14 +629,14 @@ function actualizarCampoHabitacion() {
 }
 
 listaProductos.addEventListener("click", function(evento) {
-  var boton = evento.target.closest("[data-producto]");
+  let boton = evento.target.closest("[data-producto]");
   if (boton && boton.classList.contains("agregar-producto")) {
     agregarAlCarrito(boton.dataset.producto);
   }
 });
 
 listaCarrito.addEventListener("click", function(evento) {
-  var boton = evento.target.closest("button[data-accion]");
+  let boton = evento.target.closest("button[data-accion]");
   if (!boton) {
     return;
   }
@@ -616,7 +656,7 @@ filtros.forEach(function(filtro) {
   filtro.addEventListener("click", function() {
     categoriaActiva = filtro.dataset.categoria;
     filtros.forEach(function(elemento) {
-      var activo = elemento === filtro;
+      let activo = elemento === filtro;
       elemento.classList.toggle("activo", activo);
       elemento.setAttribute("aria-pressed", String(activo));
     });
