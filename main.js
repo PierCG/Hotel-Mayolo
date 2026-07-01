@@ -1,7 +1,9 @@
 (function() {
   "use strict";
 
-const WHATSAPP_HOTEL = "51944216425";
+const configuracionTienda = window.MayoloTienda || {};
+const WHATSAPP_HOTEL = configuracionTienda.WHATSAPP_HOTEL || "51944216425";
+const CLAVE_CARRITO = configuracionTienda.CLAVE_CARRITO || "hotel-mayolo-carrito";
 
 const botonMenu = document.getElementById("boton-menu");
 const menuNav = document.getElementById("menu-navegacion");
@@ -330,7 +332,7 @@ function actualizarContadorCarritoPrincipal() {
 
   let cantidad = 0;
   try {
-    let carritoGuardado = JSON.parse(localStorage.getItem("hotel-mayolo-carrito"));
+    let carritoGuardado = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
     if (Array.isArray(carritoGuardado)) {
       cantidad = carritoGuardado.reduce(function(total, item) {
         return total + (Number.isInteger(item.cantidad) && item.cantidad > 0 ? item.cantidad : 0);
@@ -341,7 +343,7 @@ function actualizarContadorCarritoPrincipal() {
   }
 
   contadorCarritoPrincipal.textContent = cantidad;
-  enlaceCarritoPrincipal.setAttribute("aria-label", "Abrir el carrito de compras, " + cantidad + (cantidad === 1 ? " producto" : " productos"));
+  enlaceCarritoPrincipal.setAttribute("aria-label", "Ir a la tienda del hotel, " + cantidad + (cantidad === 1 ? " producto" : " productos"));
 }
 
 actualizarContadorCarritoPrincipal();
